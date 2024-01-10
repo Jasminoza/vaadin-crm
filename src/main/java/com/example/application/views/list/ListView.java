@@ -3,6 +3,7 @@ package com.example.application.views.list;
 import com.example.application.data.Contact;
 import com.example.application.services.CrmService;
 import com.example.application.views.ContactForm;
+import com.example.application.views.MainLayout;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
@@ -14,7 +15,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
 @PageTitle("Contacts | Vaadin CRM")
-@Route(value = "")
+@Route(value = "", layout = MainLayout.class)
 public class ListView extends VerticalLayout {
   private final Grid<Contact> contactsGrid = new Grid<>(Contact.class);
   private final TextField filterText = new TextField();
