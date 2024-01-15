@@ -14,17 +14,20 @@ import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 import jakarta.annotation.security.PermitAll;
+import org.springframework.context.annotation.Scope;
 
+@org.springframework.stereotype.Component
+@Scope("prototype")
 @PageTitle("Contacts | Vaadin CRM")
 @Route(value = "", layout = MainLayout.class)
 @PermitAll
 public class ListView extends VerticalLayout {
-  private final Grid<Contact> contactsGrid = new Grid<>(Contact.class);
-  private final TextField filterText = new TextField();
+  protected final Grid<Contact> contactsGrid = new Grid<>(Contact.class);
+  protected final TextField filterText = new TextField();
 
-  private final CrmService crmService;
+  protected final CrmService crmService;
 
-  private ContactForm contactForm;
+  protected ContactForm contactForm;
 
   public ListView(CrmService crmService) {
     this.crmService = crmService;

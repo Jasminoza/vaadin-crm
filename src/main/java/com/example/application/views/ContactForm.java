@@ -19,11 +19,11 @@ import com.vaadin.flow.shared.Registration;
 import java.util.List;
 
 public class ContactForm extends FormLayout {
-  TextField firstName = new TextField("First name");
-  TextField lastName = new TextField("Last name");
-  EmailField email = new EmailField("Email");
-  ComboBox<Status> status = new ComboBox<>("Status");
-  ComboBox<Company> company = new ComboBox<>("Company");
+  public TextField firstName = new TextField("First name");
+  protected TextField lastName = new TextField("Last name");
+  protected EmailField email = new EmailField("Email");
+  protected ComboBox<Status> status = new ComboBox<>("Status");
+  protected ComboBox<Company> company = new ComboBox<>("Company");
 
   Button save = new Button("Save");
   Button delete = new Button("Delete");
